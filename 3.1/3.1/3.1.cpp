@@ -33,11 +33,12 @@ void mySolve(int** table, unsigned int cols, unsigned int rows) {
 
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			if (table[i][j] == table[i][j + 1] && table[i][j] == table[i][j + 2]) {
+
+			if (j < cols - 2 && table[i][j] == table[i][j + 1] && table[i][j] == table[i][j + 2]) {
 				found = true;
 				break;
 			}
-			if (table[i][j] == table[i + 1][j] && table[i][j] == table[i + 2][j]) {
+			if (i < rows - 2 && table[i][j] == table[i + 1][j] && table[i][j] == table[i + 2][j]) {
 				found = true;
 				break;
 			}
